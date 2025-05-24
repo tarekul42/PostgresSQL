@@ -145,3 +145,8 @@ FROM rangers
 GROUP BY
     rangers.name
 ORDER BY rangers.name ASC;
+
+-- Problem 5
+SELECT common_name FROM species
+LEFT JOIN sightings ON species.species_id = sightings.species_id
+WHERE sightings.species_id IS NULL;
