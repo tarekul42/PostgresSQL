@@ -162,3 +162,7 @@ LIMIT 2;
 UPDATE species
 SET conservation_status = 'Historic'
 WHERE discovery_date < '1800-01-01';
+
+-- Problem 8
+DELETE FROM rangers
+WHERE ranger_id NOT IN ( SELECT ranger_id FROM sightings);
