@@ -139,14 +139,21 @@ FROM sightings;
 SELECT * FROM sightings WHERE location LIKE '%Pass%';
 
 -- Problem 4
-SELECT rangers.name, count(sightings.sighting_id)
-FROM rangers
-    JOIN sightings ON rangers.ranger_id = sightings.ranger_id
+SELECT rg.name, count(st.sighting_id)
+FROM rangers AS rg
+    JOIN sightings AS st ON rg.ranger_id = st.ranger_id
 GROUP BY
-    rangers.name
-ORDER BY rangers.name ASC;
+    rg.name
+ORDER BY rg.name ASC;
 
 -- Problem 5
 SELECT common_name FROM species
 LEFT JOIN sightings ON species.species_id = sightings.species_id
 WHERE sightings.species_id IS NULL;
+
+-- Problem 6
+SELECT sc.common_name, st.sighting_time, rg.name FROM sightings st
+JOIN species sc ON st.species_id = sc.species_id
+JOIN rangers rg ON st.ranger_id = rg.ranger_id
+ORDER BY st.sighting_time DESC
+LIMIT 2;
