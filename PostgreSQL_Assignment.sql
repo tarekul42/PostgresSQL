@@ -147,13 +147,18 @@ GROUP BY
 ORDER BY rg.name ASC;
 
 -- Problem 5
-SELECT common_name FROM species
-LEFT JOIN sightings ON species.species_id = sightings.species_id
-WHERE sightings.species_id IS NULL;
+SELECT common_name FROM species AS sc
+LEFT JOIN sightings AS st ON sc.species_id = st.species_id
+WHERE st.species_id IS NULL;
 
 -- Problem 6
-SELECT sc.common_name, st.sighting_time, rg.name FROM sightings st
-JOIN species sc ON st.species_id = sc.species_id
-JOIN rangers rg ON st.ranger_id = rg.ranger_id
+SELECT sc.common_name, st.sighting_time, rg.name FROM sightings AS st
+JOIN species AS sc ON st.species_id = sc.species_id
+JOIN rangers AS rg ON st.ranger_id = rg.ranger_id
 ORDER BY st.sighting_time DESC
 LIMIT 2;
+
+-- Problem 7
+UPDATE species
+SET conservation_status = 'Historic'
+WHERE discovery_date < '1800-01-01';
