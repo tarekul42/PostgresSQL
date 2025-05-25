@@ -147,30 +147,48 @@ GROUP BY
 ORDER BY rg.name ASC;
 
 -- Problem 5
-SELECT common_name FROM species AS sc
-LEFT JOIN sightings AS st ON sc.species_id = st.species_id
-WHERE st.species_id IS NULL;
+SELECT common_name
+FROM species AS sc
+    LEFT JOIN sightings AS st ON sc.species_id = st.species_id
+WHERE
+    st.species_id IS NULL;
 
 -- Problem 6
-SELECT sc.common_name, st.sighting_time, rg.name FROM sightings AS st
-JOIN species AS sc ON st.species_id = sc.species_id
-JOIN rangers AS rg ON st.ranger_id = rg.ranger_id
+SELECT sc.common_name, st.sighting_time, rg.name
+FROM
+    sightings AS st
+    JOIN species AS sc ON st.species_id = sc.species_id
+    JOIN rangers AS rg ON st.ranger_id = rg.ranger_id
 ORDER BY st.sighting_time DESC
 LIMIT 2;
 
 -- Problem 7
 UPDATE species
-SET conservation_status = 'Historic'
-WHERE discovery_date < '1800-01-01';
+SET
+    conservation_status = 'Historic'
+WHERE
+    discovery_date < '1800-01-01';
 
 -- Problem 8
-SELECT sighting_id, CASE
-    WHEN EXTRACT(HOUR FROM sighting_time) < 12 THEN 'Morning'
-    WHEN EXTRACT(HOUR FROM sighting_time) BETWEEN 12 AND 17 THEN 'Afternoon'
-    ELSE 'Evening'
-END AS time_of_day FROM sightings;
-
+SELECT
+    sighting_id,
+    CASE
+        WHEN EXTRACT(
+            HOUR
+            FROM sighting_time
+        ) < 12 THEN 'Morning'
+        WHEN EXTRACT(
+            HOUR
+            FROM sighting_time
+        ) BETWEEN 12 AND 17  THEN 'Afternoon'
+        ELSE 'Evening'
+    END AS time_of_day
+FROM sightings;
 
 -- Problem 9
 DELETE FROM rangers
-WHERE ranger_id NOT IN ( SELECT ranger_id FROM sightings);
+WHERE
+    ranger_id NOT IN (
+        SELECT ranger_id
+        FROM sightings
+    );
