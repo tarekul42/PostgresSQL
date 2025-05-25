@@ -163,6 +163,14 @@ UPDATE species
 SET conservation_status = 'Historic'
 WHERE discovery_date < '1800-01-01';
 
+-- Problem 8
+SELECT sighting_id, CASE
+    WHEN EXTRACT(HOUR FROM sighting_time) < 12 THEN 'Morning'
+    WHEN EXTRACT(HOUR FROM sighting_time) BETWEEN 12 AND 17 THEN 'Afternoon'
+    ELSE 'Evening'
+END AS time_of_day FROM sightings;
+
+
 -- Problem 9
 DELETE FROM rangers
 WHERE ranger_id NOT IN ( SELECT ranger_id FROM sightings);
