@@ -39,7 +39,7 @@ UPDATE employees
     WHERE emp_id = 1;
 ```
 
-এখানে emp_id ১ এর এমপ্লয়ির নাম ‘Rahim’ এ আপডেট হবে কিন্তু এখানে WHERE ক্লজ ব্যবহার না করলে সব রেকর্ড আপডেট হয়ে যাবে, যা অনেক সময় অবাঞ্ছিত হতে পারে।
+এখানে emp_id 1 এর এমপ্লয়ির নাম ‘Rahim’ এ আপডেট হবে কিন্তু এখানে WHERE ক্লজ ব্যবহার না করলে সব রেকর্ড আপডেট হয়ে যাবে, যা অনেক সময় অবাঞ্ছিত হতে পারে।
 
 ## What is the significance of the JOIN operation, and how does it work in PostgreSQL(JOIN অপারেশনের গুরুত্ব এবং PostgreSQL-এ এটি কীভাবে কাজ করে) ?
 
