@@ -1,8 +1,8 @@
-## What is PostgreSQL?(PostgreSQL কী?)
+## What is PostgreSQL(PostgreSQL কী)?
 
 PostgreSQL হলো একটি ওপেন সোর্স, অবজেক্ট-রিলেশনাল ডেটাবেস ম্যানেজমেন্ট সিস্টেম (ORDBMS)। এটি অত্যন্ত শক্তিশালী এবং স্কেলেবল। এটি SQL ব্যবহার করে ডেটা পরিচালনা করে এবং অ্যাপ্লিকেশন, ওয়েব সার্ভিস, ও অন্যান্য ডাটা স্টোরেজ হিসেবে ব্যবহার করা হয়। PostgreSQL ACID (Atomicity, Consistency, Isolation, Durability) সমর্থন করে। যা ডাটার ও নিরাপত্তা নির্ভরযোগ্যতা নিশ্চিত করে। এতে ট্রানজেকশন, জটিল কুয়েরি, এক্সটেনশন, স্টোরড প্রসিডিউর এর মত আধুনিক ফিচার রয়েছে। এটি JSON, XML, এবং অন্যান্য ডাটা টাইপ সমর্থন করে এবং এক্সটেনশনের মাধ্যমে ফাংশনালিটি বাড়ানো যায়। এটি ছোট থেকে বড় এন্টারপ্রাইজ লেভেলের অ্যাপ্লিকেশনে পর্যন্ত ব্যবহার করা হয়।
 
-## Explain the Primary Key and Foreign Key concepts in PostgreSQL.(Primary Key এবং Foreign Key এর ধারণা)
+## Explain the Primary Key and Foreign Key concepts in PostgreSQL (Primary Key এবং Foreign Key এর ধারণা)?
 
 - Primary Key একটি কলাম বা কলামের সংমিশ্রণ যা টেবিলের প্রতিটি রেকর্ডকে ইউনিকভাবে চিহ্নিত করে। এটি ডুপ্লিকেট বা NULL ভ্যালু হতে পারে না। এটি ডেটার ইন্টিগ্রিটি বজায় রাখে।
   যেমন: students নামের একটি টেবিলে student_id একটি Primary Key হতে পারে কারন প্রত্য়েকটি ছাত্রের সাধারনত একটি ইউনিক student_id থাকে। এক্ষেত্রে SQL-এ ব্য়প্য়ারটা অনেকটা
@@ -27,9 +27,7 @@ CREATE TABLE enrollments (
 );
 ```
 
-## What is the significance of the JOIN operation, and how does it work in PostgreSQL?
-
-(JOIN অপারেশনের গুরুত্ব এবং PostgreSQL-এ এটি কীভাবে কাজ করে?)
+## What is the significance of the JOIN operation, and how does it work in PostgreSQL (JOIN অপারেশনের গুরুত্ব এবং PostgreSQL-এ এটি কীভাবে কাজ করে)?
 
 JOIN অপারেশন টেবিলগুলোর মধ্যে সম্পর্ক স্থাপন করে এবং একাধিক টেবিল থেকে ডেটা একত্রিত করে। এটি রিলেশনাল ডেটাবেসের সবচেয়ে গুরুত্বপূর্ণ ফিচার।
 
